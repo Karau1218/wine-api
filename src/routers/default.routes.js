@@ -1,9 +1,14 @@
 // FINISH VERB1 - ROUTER
 import { Router } from "express";
 import * as wineController from "../controllers/wine.controller.js"
-router.post("/wines", wineController.createWine);
 
 const router = Router();
+
+router.post("/wines", wineController.createWine);
+router.put("/wines/:id", wineController.updateWine);
+router.delete("/wines/:id", wineController.deleteWine);
+
+
 
 router.get("/", (req, res) => {
     res.render("default", {
