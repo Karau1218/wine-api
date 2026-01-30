@@ -58,7 +58,7 @@ export const updateWine = (req, res) => {
         data: null
         });
     }
-const updateWine = wineService.update(id, { name, year})
+const updatedWine = wineService.update(id, { name, year})
     if (!updatedWine) {
          return res.status(404).json({
             message: `Wine with id ${id} not found.`,
