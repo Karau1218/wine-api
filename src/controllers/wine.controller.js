@@ -35,10 +35,15 @@ export const createWine = (req, res) => {
 
     if (!name || !year) {
         return res.status(400).json({
-            message: `Wine found.`,
-        data: wine
-        })
+            message: "Wine name and year are required",
+        data: null
+        });
     }
 
+    const newWine = wineService.create({ name, year});
+    res.status(201).json({
+        message: "Wine created successfully.",
+        data: newWine
+    })
 }
 
